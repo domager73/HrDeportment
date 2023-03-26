@@ -8,13 +8,11 @@ namespace HrDeportment
 {
     public class PostStorage
     {
-        private List<string> _posts;
-
-        public PostStorage() 
-        {
-            _posts = new List<string>() { "Деректор", "Уборщица", "Сеньер", "Мидле", "Джун"};
-        }
-
-        List<string> GetPosts() => _posts;
+        public static List<string> Posts { get; private set; } = new List<string>() {
+            "Деректор",
+            "Уборщица",
+            "Сеньер",
+            "Мидле",
+            "Джун"};
     }
 }
