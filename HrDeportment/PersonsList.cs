@@ -33,11 +33,24 @@ namespace HrDeportment
             return _persons.FirstOrDefault(person => person.IsActive() && person.GetId() == id);
         }
 
-        public void DeleteById(int id)
+        public void DeleteActiveById(int id)
         {
-            Person person = _persons.FirstOrDefault(person => person.IsActive() && person.GetId() == id);
+            Person person = GetActiveById(id);
             person.SoftDelete();
         }
-        
+
+        public void ChangeSalaryActiveById(int id, double newSalary) 
+        {
+            Person person = GetActiveById(id);
+
+            person.SetSalary(newSalary);
+        }
+
+        public void ChangePostActiveById(int id, string newPost)
+        {
+            Person person = GetActiveById(id);
+
+            person.SetPost(newPost);
+        }
     }
 }

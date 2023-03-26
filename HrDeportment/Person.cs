@@ -46,5 +46,15 @@ namespace HrDeportment
         {
             return _id;
         }
+
+        public void SetSalary(double newSalary) 
+        {
+            _salary = newSalary;
+        }
+
+        public void SetPost(string newPost) 
+        {
+            _post = newPost;
+        }
     }
 }

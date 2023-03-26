@@ -2,7 +2,10 @@
 
 PersonsList personsList = new PersonsList();
 
-personsList.DeleteById(1);
+personsList.DeleteActiveById(1);
+personsList.ChangePostActiveById(2, PostStorage.Posts[1]);
+personsList.ChangeSalaryActiveById(2, 1000000S);
+
 
 personsList.GetAllActive().ForEach(person =>
 {
