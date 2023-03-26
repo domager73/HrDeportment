@@ -22,5 +22,22 @@ namespace HrDeportment
         {
             _persons.Add(person);
         }
+
+        public List<Person> GetAllActive()
+        {
+            return _persons.Where(person => person.IsActive()).ToList();
+        }
+
+        public Person GetActiveById(int id)
+        {
+            return _persons.FirstOrDefault(person => person.IsActive() && person.GetId() == id);
+        }
+
+        public void DeleteById(int id)
+        {
+            Person person = _persons.FirstOrDefault(person => person.IsActive() && person.GetId() == id);
+            person.SoftDelete();
+        }
+        
     }
 }
